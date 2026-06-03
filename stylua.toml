@@ -1,0 +1,3 @@
+indent_width = 4
+quote_style = "ForceDouble"
+no_call_parentheses = false
