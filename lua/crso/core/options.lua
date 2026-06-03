@@ -16,9 +16,15 @@ opt.shortmess:append("sI")
 opt.undofile = true
 opt.updatetime = 250
 opt.timeout = false
+opt.clipboard = "unnamedplus"
+
+-- Patch do Clipboard para o WSL
+require("crso.utils.wsl-clipboard")
+
 -- Busca
 opt.ignorecase = true
 opt.smartcase = true
+
 -- Navegação
 opt.mouse = "a"
 opt.whichwrap:append("<>[]hlb")
