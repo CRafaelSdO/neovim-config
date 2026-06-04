@@ -2,9 +2,14 @@
 ---@param lhs string The custom keystroke or shortcut you want to use
 ---@param rhs string|function The command or Lua function triggered by the shortcut
 ---@param desc string The description os the map
----@param remap? boolean If the rhs should be remapped
-local function set(mode, lhs, rhs, desc, remap)
-	vim.keymap.set(mode, lhs, rhs, { desc = desc, silent = true, remap = remap or false })
+---@param opts? vim.keymap.set.Opts Tabela com opções adicionais (expr, silent, buffer, remap, etc.)
+local function set(mode, lhs, rhs, desc, opts)
+    opts = vim.tbl_deep_extend("force", {
+        desc = desc,
+        silent = true,
+    }, opts or {})
+
+    vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 -------------------------------------------------------------------------------
@@ -88,8 +93,8 @@ end, "Toggle mini.files (Diretório atual)")
 -------------------------------------------------------------------------------
 -- COMMENTS
 -------------------------------------------------------------------------------
-set("n", "<leader>;", "gcc", "Comments: Toggle line comment", true)
-set("v", "<leader>;", "gc", "Comments: Toggle block comment", true)
+set("n", "<leader>;", "gcc", "Comments: Toggle line comment", { remap = true })
+set("v", "<leader>;", "gc", "Comments: Toggle block comment", { remap = true })
 
 -------------------------------------------------------------------------------
 -- TELESCOPE
