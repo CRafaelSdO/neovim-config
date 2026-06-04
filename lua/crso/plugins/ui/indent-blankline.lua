@@ -1,26 +1,26 @@
 return {
-	{
-		"lukas-reineke/indent-blankline.nvim",
+    {
+        "lukas-reineke/indent-blankline.nvim",
 
-		main = "ibl",
-		event = { "BufReadPost", "BufNewFile" },
+        main = "ibl",
+        event = { "BufReadPost", "BufNewFile" },
 
-		opts = {
-			indent = { char = "│" },
+        opts = {
+            indent = { char = "│" },
 
-			exclude = {
-				filetypes = {
-					"help",
-					"lazy",
-					"mason",
-					"notify",
-				},
-			},
+            exclude = {
+                filetypes = {
+                    "help",
+                    "lazy",
+                    "mason",
+                    "notify",
+                },
+            },
 
-			scope = {
-				enabled = true,
-				show_start = false,
-			},
-		},
-	},
+            scope = {
+                enabled = true,
+                show_start = false,
+            },
+        },
+    },
 }

@@ -14,11 +14,11 @@ function class:init(...) end
 ---@param ... unknown
 ---@return Obj
 function class:new(...)
-	local obj = setmetatable({}, self)
+    local obj = setmetatable({}, self)
 
-	obj:init(...)
+    obj:init(...)
 
-	return obj
+    return obj
 end
 
 -- You can call the class to initialize it without using `Obj:init`.
@@ -26,7 +26,7 @@ end
 ---@param ... unknown
 ---@return Obj
 function class:__call(...)
-	return self:new(...)
+    return self:new(...)
 end
 
 -- Create a new class/object by extending the base Object class.
@@ -36,32 +36,32 @@ end
 ---@param className string The new class name
 ---@return T
 function class:extend(className)
-	local cls = {}
+    local cls = {}
 
-	for key, value in pairs(self) do
-		if key:find("__") == 1 then
-			cls[key] = value
-		end
-	end
+    for key, value in pairs(self) do
+        if key:find("__") == 1 then
+            cls[key] = value
+        end
+    end
 
-	cls.__index = cls
-	cls.super = self
-	cls.className = className or self.className
+    cls.__index = cls
+    cls.super = self
+    cls.className = className or self.className
 
-	return setmetatable(cls, self)
+    return setmetatable(cls, self)
 end
 
 -- Implement a mixin onto this Object.
 ---@param self Obj
 ---@param ... unknown
 function class:implement(...)
-	for _, cls in ipairs({ ... }) do
-		for key, value in pairs(cls) do
-			if not self[key] and type(value) == "function" then
-				self[key] = value
-			end
-		end
-	end
+    for _, cls in ipairs({ ... }) do
+        for key, value in pairs(cls) do
+            if not self[key] and type(value) == "function" then
+                self[key] = value
+            end
+        end
+    end
 end
 
 -- Checks if the object is an instance
@@ -70,17 +70,17 @@ end
 ---@param Type Obj
 ---@return boolean
 function class:is(Type)
-	local metatable = getmetatable(self)
+    local metatable = getmetatable(self)
 
-	while metatable do
-		if metatable == Type then
-			return true
-		end
+    while metatable do
+        if metatable == Type then
+            return true
+        end
 
-		metatable = getmetatable(metatable)
-	end
+        metatable = getmetatable(metatable)
+    end
 
-	return false
+    return false
 end
 
 -- The default tostring implementation for an object.
@@ -88,15 +88,15 @@ end
 ---@param self Obj
 ---@return string
 function class:__tostring()
-	local metatable = getmetatable(self)
+    local metatable = getmetatable(self)
 
-	setmetatable(self, nil)
+    setmetatable(self, nil)
 
-	local address = tostring(self):match("^table: (.*)")
+    local address = tostring(self):match("^table: (.*)")
 
-	setmetatable(self, metatable) -- Devolve a metatabela
+    setmetatable(self, metatable) -- Devolve a metatabela
 
-	return self.className .. "@" .. address
+    return self.className .. "@" .. address
 end
 
 return class

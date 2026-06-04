@@ -1,12 +1,12 @@
 return {
-	{
-		"echasnovski/mini.files",
+    {
+        "echasnovski/mini.files",
 
-		version = "*",
-		event = "VeryLazy",
+        version = "*",
+        event = "VeryLazy",
 
-		opts = {
-			windows = { preview = true },
-		},
-	},
+        opts = {
+            windows = { preview = true },
+        },
+    },
 }

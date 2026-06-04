@@ -1,7 +1,7 @@
 return {
-	{
-		"famiu/bufdelete.nvim",
+    {
+        "famiu/bufdelete.nvim",
 
-		event = "VeryLazy",
-	},
+        event = "VeryLazy",
+    },
 }

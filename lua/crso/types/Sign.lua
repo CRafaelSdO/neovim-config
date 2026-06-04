@@ -15,18 +15,18 @@ class.text = " "
 ---@param hl_group? string Grupo de realce
 ---@param text? string Texto renderizado
 function class:init(priority, hl_group, text)
-	self.priority = priority or self.priority
-	self.hl_group = hl_group or self.hl_group
-	self.text = (text and vim.trim(text) ~= "") and vim.trim(text) or self.text
+    self.priority = priority or self.priority
+    self.hl_group = hl_group or self.hl_group
+    self.text = (text and vim.trim(text) ~= "") and vim.trim(text) or self.text
 end
 
 ---@return string
 function class:render()
-	if self.text == " " then
-		return " "
-	end
+    if self.text == " " then
+        return " "
+    end
 
-	return "%#" .. self.hl_group .. "#" .. self.text .. "%*"
+    return "%#" .. self.hl_group .. "#" .. self.text .. "%*"
 end
 
 return class

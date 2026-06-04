@@ -39,19 +39,19 @@ set("n", "<C-l>", "<C-w>l", "Windows: Focus right window")
 set("n", "<leader>bn", "<cmd>enew<cr>", "Buffers: Open a new empty buffer")
 
 set("n", "<leader>bd", function()
-	require("bufdelete").bufdelete(0, false)
+    require("bufdelete").bufdelete(0, false)
 end, "Buffers: Close current buffer")
 
 set("n", "<leader>bD", function()
-	require("bufdelete").bufdelete(0, true)
+    require("bufdelete").bufdelete(0, true)
 end, "Buffers: Close current buffer (forced)")
 
 set("n", "<leader>bw", function()
-	require("bufdelete").bufdelete(0, false)
+    require("bufdelete").bufdelete(0, false)
 end, "Buffers: Wipeout current buffer")
 
 set("n", "<leader>bW", function()
-	require("bufdelete").bufdelete(0, true)
+    require("bufdelete").bufdelete(0, true)
 end, "Buffers: Wipeout current buffer (forced)")
 
 set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", "Buffers: Next buffer")
@@ -83,11 +83,11 @@ set("t", "<esc>", [[<C-\><C-n>]], "Sair do modo terminal")
 set("n", "<leader>q", "<cmd>q<cr>", "System: Quit Neovim")
 
 set("n", "<leader>e", function()
-	local mini_files = require("mini.files")
+    local mini_files = require("mini.files")
 
-	if not mini_files.close() then
-		mini_files.open(vim.api.nvim_buf_get_name(0))
-	end
+    if not mini_files.close() then
+        mini_files.open(vim.api.nvim_buf_get_name(0))
+    end
 end, "Toggle mini.files (Diretório atual)")
 
 -------------------------------------------------------------------------------
@@ -100,31 +100,31 @@ set("v", "<leader>;", "gc", "Comments: Toggle block comment", { remap = true })
 -- TELESCOPE
 -------------------------------------------------------------------------------
 set("n", "<leader>ff", function()
-	require("telescope.builtin").find_files()
+    require("telescope.builtin").find_files()
 end, "Telescope: Find Files")
 
 set("n", "<leader>fg", function()
-	require("telescope.builtin").live_grep()
+    require("telescope.builtin").live_grep()
 end, "Telescope: Live Grep text")
 
 set("n", "<leader>fb", function()
-	require("telescope.builtin").buffers()
+    require("telescope.builtin").buffers()
 end, "Telescope: List active buffers")
 
 set("n", "<leader>fh", function()
-	require("telescope.builtin").help_tags()
+    require("telescope.builtin").help_tags()
 end, "Telescope: Search Help Docs")
 
 set("n", "<leader>fc", function()
-	require("telescope.builtin").commands()
+    require("telescope.builtin").commands()
 end, "Telescope: Neovim Commands")
 
 set("n", "<leader>fk", function()
-	require("telescope.builtin").keymaps()
+    require("telescope.builtin").keymaps()
 end, "Telescope: Active Keymaps")
 
 set("n", "<leader>ft", function()
-	require("telescope-tabs").list_tabs()
+    require("telescope-tabs").list_tabs()
 end, "Telescope: List active tabs")
 
 -------------------------------------------------------------------------------
@@ -133,40 +133,40 @@ end, "Telescope: List active tabs")
 set("n", "<leader>gg", "<cmd>LazyGit<cr>", "Git: Open LazyGit dashboard")
 
 set("n", "<leader>hp", function()
-	require("gitsigns").gitsigns.preview_hunk()
+    require("gitsigns").gitsigns.preview_hunk()
 end, "Git: Preview change popup")
 
 set("n", "]c", function()
-	if vim.wo.diff then
-		return "]c"
-	end
+    if vim.wo.diff then
+        return "]c"
+    end
 
-	vim.schedule(function()
-		require("gitsigns").next_hunk()
-	end)
+    vim.schedule(function()
+        require("gitsigns").next_hunk()
+    end)
 
-	return "<Ignore>"
+    return "<Ignore>"
 end, "Git: Next change hunk")
 
 set("n", "[c", function()
-	if vim.wo.diff then
-		return "[c"
-	end
+    if vim.wo.diff then
+        return "[c"
+    end
 
-	vim.schedule(function()
-		require("gitsigns").prev_hunk()
-	end)
+    vim.schedule(function()
+        require("gitsigns").prev_hunk()
+    end)
 
-	return "<Ignore>"
+    return "<Ignore>"
 end, "Git: Previous change hunk")
 
 -------------------------------------------------------------------------------
 -- NVIM-UFO
 -------------------------------------------------------------------------------
 set("n", "zR", function()
-	require("ufo").openAllFolds()
+    require("ufo").openAllFolds()
 end, "Ufo: Open all code folds")
 
 set("n", "zM", function()
-	require("ufo").closeAllFolds()
+    require("ufo").closeAllFolds()
 end, "Ufo: Close all code folds")

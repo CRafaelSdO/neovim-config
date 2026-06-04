@@ -54,22 +54,22 @@ opt.foldlevelstart = 99
 opt.foldenable = true
 
 opt.fillchars = {
-	eob = " ",
-	foldopen = "",
-	foldclose = "",
-	foldsep = " ",
-	foldinner = " ",
+    eob = " ",
+    foldopen = "",
+    foldclose = "",
+    foldsep = " ",
+    foldinner = " ",
 }
 
 vim.diagnostic.config({
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = "",
-			[vim.diagnostic.severity.WARN] = "",
-			[vim.diagnostic.severity.INFO] = "",
-			[vim.diagnostic.severity.HINT] = "󰌵",
-		},
-	},
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.INFO] = "",
+            [vim.diagnostic.severity.HINT] = "󰌵",
+        },
+    },
 })
 
 require("crso.utils.status-column")

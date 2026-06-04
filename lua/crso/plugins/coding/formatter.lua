@@ -1,26 +1,26 @@
 return {
-	{
-		"stevearc/conform.nvim",
+    {
+        "stevearc/conform.nvim",
 
-		dependencies = { "mason-org/mason.nvim" },
+        dependencies = { "mason-org/mason.nvim" },
 
-		opts = {
-			formatters_by_ft = require("crso.meta.languages"):formatter_by_ft(),
+        opts = {
+            formatters_by_ft = require("crso.meta.languages"):formatter_by_ft(),
 
-			format_on_save = {
-				timeout_ms = 500,
-				lsp_fallback = true,
-			},
-		},
-	},
+            format_on_save = {
+                timeout_ms = 500,
+                lsp_fallback = true,
+            },
+        },
+    },
 
-	{
-		"zapling/mason-conform.nvim",
+    {
+        "zapling/mason-conform.nvim",
 
-		event = { "BufReadPre", "BufNewFile" },
+        event = { "BufReadPre", "BufNewFile" },
 
-		dependencies = { "mason-org/mason.nvim", "stevearc/conform.nvim" },
+        dependencies = { "mason-org/mason.nvim", "stevearc/conform.nvim" },
 
-		opts = { ignore_install = {} },
-	},
+        opts = { ignore_install = {} },
+    },
 }

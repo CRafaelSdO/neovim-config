@@ -1,46 +1,46 @@
 return {
-	{
-		"catppuccin/nvim",
+    {
+        "catppuccin/nvim",
 
-		name = "catppuccin",
-		lazy = false,
-		priority = 1000,
+        name = "catppuccin",
+        lazy = false,
+        priority = 1000,
 
-		opts = {
-			flavour = "mocha",
+        opts = {
+            flavour = "mocha",
 
-			background = {
-				light = "frappe",
-				dark = "mocha",
-			},
+            background = {
+                light = "frappe",
+                dark = "mocha",
+            },
 
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = false,
-			},
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false,
+            },
 
-			integrations = {
-				gitsigns = true,
-				treesitter = true,
-				blink_cmp = true,
+            integrations = {
+                gitsigns = true,
+                treesitter = true,
+                blink_cmp = true,
 
-				mini = {
-					enabled = true,
-					indentscope = true,
-				},
+                mini = {
+                    enabled = true,
+                    indentscope = true,
+                },
 
-				custom_highlights = function(colors)
-					return {
-						WinSeparator = { fg = colors.crust, bg = colors.crust },
-					}
-				end,
-			},
-		},
+                custom_highlights = function(colors)
+                    return {
+                        WinSeparator = { fg = colors.crust, bg = colors.crust },
+                    }
+                end,
+            },
+        },
 
-		config = function(_, opts)
-			require("catppuccin").setup(opts)
+        config = function(_, opts)
+            require("catppuccin").setup(opts)
 
-			vim.cmd([[colorscheme catppuccin-mocha]])
-		end,
-	},
+            vim.cmd([[colorscheme catppuccin-mocha]])
+        end,
+    },
 }

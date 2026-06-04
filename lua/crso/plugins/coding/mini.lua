@@ -1,34 +1,34 @@
 return {
-	{
-		"echasnovski/mini.surround",
+    {
+        "echasnovski/mini.surround",
 
-		version = "*",
-		event = { "BufReadPre", "BufNewFile" },
-		opts = {
-			mappings = {
-				add = "<leader>sa",
-				delete = "<leader>sd",
-				find = "<leader>sf",
-				find_left = "<leader>sF",
-				highlight = "<leader>sh",
-				replace = "<leader>sr",
-			},
-		},
-	},
+        version = "*",
+        event = { "BufReadPre", "BufNewFile" },
+        opts = {
+            mappings = {
+                add = "<leader>sa",
+                delete = "<leader>sd",
+                find = "<leader>sf",
+                find_left = "<leader>sF",
+                highlight = "<leader>sh",
+                replace = "<leader>sr",
+            },
+        },
+    },
 
-	{
-		"echasnovski/mini.ai",
+    {
+        "echasnovski/mini.ai",
 
-		version = "*",
-		event = { "BufReadPre", "BufNewFile" },
-		config = true,
-	},
+        version = "*",
+        event = { "BufReadPre", "BufNewFile" },
+        config = true,
+    },
 
-	{
-		"echasnovski/mini.pairs",
+    {
+        "echasnovski/mini.pairs",
 
-		version = "*",
-		event = "InsertEnter",
-		config = true,
-	},
+        version = "*",
+        event = "InsertEnter",
+        config = true,
+    },
 }

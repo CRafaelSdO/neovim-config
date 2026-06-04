@@ -1,59 +1,59 @@
 return {
-	{
-		"saghen/blink.cmp",
+    {
+        "saghen/blink.cmp",
 
-		version = "*",
-		event = "VeryLazy",
+        version = "*",
+        event = "VeryLazy",
 
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-			"L3MON4D3/LuaSnip",
-		},
+        dependencies = {
+            "rafamadriz/friendly-snippets",
+            "L3MON4D3/LuaSnip",
+        },
 
-		opts = {
-			completion = {
-				menu = { border = "rounded" },
-				ghost_text = { enabled = true },
+        opts = {
+            completion = {
+                menu = { border = "rounded" },
+                ghost_text = { enabled = true },
 
-				accept = {
-					auto_brackets = { enabled = true },
-				},
+                accept = {
+                    auto_brackets = { enabled = true },
+                },
 
-				documentation = {
-					window = { border = "rounded" },
-				},
+                documentation = {
+                    window = { border = "rounded" },
+                },
 
-				list = {
-					selection = {
-						preselect = true,
-						auto_insert = false,
-					},
-				},
-			},
+                list = {
+                    selection = {
+                        preselect = true,
+                        auto_insert = false,
+                    },
+                },
+            },
 
-			signature = {
-				window = { border = "rounded" },
-			},
+            signature = {
+                window = { border = "rounded" },
+            },
 
-			snippets = { preset = "luasnip" },
+            snippets = { preset = "luasnip" },
 
-			keymap = { preset = "super-tab" },
+            keymap = { preset = "super-tab" },
 
-			cmdline = {
-				keymap = { preset = "inherit" },
+            cmdline = {
+                keymap = { preset = "inherit" },
 
-				completion = {
-					menu = { auto_show = true },
-					ghost_text = { enabled = true },
+                completion = {
+                    menu = { auto_show = true },
+                    ghost_text = { enabled = true },
 
-					list = {
-						selection = {
-							preselect = true,
-							auto_insert = false,
-						},
-					},
-				},
-			},
-		},
-	},
+                    list = {
+                        selection = {
+                            preselect = true,
+                            auto_insert = false,
+                        },
+                    },
+                },
+            },
+        },
+    },
 }

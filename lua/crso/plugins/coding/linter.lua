@@ -1,23 +1,23 @@
 return {
-	{
-		"mfussenegger/nvim-lint",
+    {
+        "mfussenegger/nvim-lint",
 
-		dependencies = { "mason-org/mason.nvim" },
+        dependencies = { "mason-org/mason.nvim" },
 
-		config = function()
-			require("lint").linters_by_ft = require("crso.meta.languages"):linter_by_ft()
-		end,
-	},
+        config = function()
+            require("lint").linters_by_ft = require("crso.meta.languages"):linter_by_ft()
+        end,
+    },
 
-	{
-		"rshkarin/mason-nvim-lint",
+    {
+        "rshkarin/mason-nvim-lint",
 
-		event = { "BufReadPre", "BufNewFile" },
+        event = { "BufReadPre", "BufNewFile" },
 
-		dependencies = { "mason-org/mason.nvim", "mfussenegger/nvim-lint" },
+        dependencies = { "mason-org/mason.nvim", "mfussenegger/nvim-lint" },
 
-		opts = {
-			automatic_installation = true,
-		},
-	},
+        opts = {
+            automatic_installation = true,
+        },
+    },
 }

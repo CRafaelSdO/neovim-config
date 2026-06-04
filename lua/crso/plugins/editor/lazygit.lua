@@ -1,15 +1,15 @@
 return {
-	{
-		"kdheepak/lazygit.nvim",
+    {
+        "kdheepak/lazygit.nvim",
 
-		cmd = {
-			"LazyGit",
-			"LazyGitConfig",
-			"LazyGitCurrentFile",
-			"LazyGitFilter",
-			"LazyGitFilterCurrentFile",
-		},
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
 
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
 }
