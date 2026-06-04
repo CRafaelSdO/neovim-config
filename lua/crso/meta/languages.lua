@@ -8,21 +8,25 @@ M._languages_meta = {
 	markdown = {
 		lsp = "marksman",
 		linter = "markdownlint",
+		formatter = "prettier",
 	},
 
 	markdown_inline = {
 		lsp = "marksman",
 		linter = "markdownlint",
+		formatter = "prettier",
 	},
 
 	lua = {
 		lsp = "lua_ls",
 		linter = "luacheck",
+		formatter = "stylua",
 	},
 
 	yaml = {
 		lsp = "yamlls",
 		linter = "yamllint",
+		formatter = "yamlfmt",
 	},
 }
 
@@ -93,6 +97,16 @@ function M:linter_by_ft()
 	end
 
 	return linter_by_ft
+end
+
+function M:formatter_by_ft()
+	local formatter_by_ft = {}
+
+	for language, meta in pairs(self._languages_meta) do
+		formatter_by_ft[meta.ft or language] = type(meta.fomatter) == "table" and meta.fomatter or { meta.formatter }
+	end
+
+	return formatter_by_ft
 end
 
 return M

@@ -1,6 +1,8 @@
 {
   "SchemaStore.nvim": { "branch": "main", "commit": "19936230448bfb3dfd4314070e8bc499ceb55928" },
+  "conform.nvim": { "branch": "master", "commit": "619363c30309d29ffa631e67c8183f2a72caa373" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
+  "mason-conform.nvim": { "branch": "main", "commit": "48da2ebd5efbaf8a99566eadc3ece82d523f03c5" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "0a695750d747db1e7e70bcf0267ef8951c95fc83" },
   "mason-nvim-lint": { "branch": "main", "commit": "cafbc5d82d8eb4af0daf0057332a325ddf2f436b" },
   "mason.nvim": { "branch": "main", "commit": "16ba83bfc8a25f52bb545134f5bee082b195c460" },
