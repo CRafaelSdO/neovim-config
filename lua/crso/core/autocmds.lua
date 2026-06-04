@@ -1,6 +1,17 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
+autocmd("TextYankPost", {
+	group = augroup("yank_highlight", { clear = true }),
+
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "Visual",
+			timeout = 150,
+		})
+	end,
+})
+
 autocmd({ "BufWritePost", "InsertLeave" }, {
 	group = augroup("lint", { clear = true }),
 
