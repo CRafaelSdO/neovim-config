@@ -78,7 +78,16 @@ set("n", "<C-s>", "<cmd>w<cr>", "System: Save file")
 set("i", "<C-s>", "<Esc><cmd>w<cr>a", "System: Save file and continue typing")
 
 set("n", "<esc>", "<cmd>noh<cr>", "System: Clear search highlight")
-set("t", "<esc>", [[<C-\><C-n>]], "Sair do modo terminal")
+
+set("t", "<esc>", function()
+    local buf_name = vim.api.nvim_buf_get_name(0)
+
+    if buf_name:match("lazygit") then
+        return "<esc>"
+    end
+
+    return [[<C-\><C-n>]]
+end, "Sair do modo terminal", { expr = true })
 
 set("n", "<leader>q", "<cmd>q<cr>", "System: Quit Neovim")
 
