@@ -1,2 +1,5 @@
 -- Opções nativas
 require("crso.core.options")
+
+-- Bootstrap e configuração do Lazy.nvim
+require("crso.core.lazy")
