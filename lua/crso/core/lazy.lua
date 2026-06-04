@@ -25,6 +25,7 @@ require("lazy").setup({
     spec = {
         { import = "crso.plugins" },
         { import = "crso.plugins.editor" },
+        { import = "crso.plugins.coding" },
     },
 
     defaults = { lazy = true },

@@ -7,18 +7,22 @@ M._languages_meta = {
 
 	markdown = {
 		lsp = "marksman",
+		linter = "markdownlint",
 	},
 
 	markdown_inline = {
 		lsp = "marksman",
+		linter = "markdownlint",
 	},
 
 	lua = {
 		lsp = "lua_ls",
+		linter = "luacheck",
 	},
 
 	yaml = {
 		lsp = "yamlls",
+		linter = "yamllint",
 	},
 }
 
@@ -79,6 +83,16 @@ function M:lsps_opts()
 	end
 
 	return lsps_opts
+end
+
+function M:linter_by_ft()
+	local linter_by_ft = {}
+
+	for language, meta in pairs(self._languages_meta) do
+		linter_by_ft[meta.ft or language] = type(meta.linter) == "table" and meta.linter or { meta.linter }
+	end
+
+	return linter_by_ft
 end
 
 return M
