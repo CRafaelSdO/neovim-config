@@ -146,3 +146,14 @@ set("n", "[c", function()
 
 	return "<Ignore>"
 end, "Git: Previous change hunk")
+
+-------------------------------------------------------------------------------
+-- NVIM-UFO
+-------------------------------------------------------------------------------
+set("n", "zR", function()
+	require("ufo").openAllFolds()
+end, "Ufo: Open all code folds")
+
+set("n", "zM", function()
+	require("ufo").closeAllFolds()
+end, "Ufo: Close all code folds")

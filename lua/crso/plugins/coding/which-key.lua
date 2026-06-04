@@ -26,6 +26,7 @@ return {
 				{ "[", group = "Prev" },
 				{ "]", group = "Next" },
 				{ "g", group = "Goto / Comments" },
+				{ "z", group = "Folds (UFO)" },
 			})
 		end,
 	},
