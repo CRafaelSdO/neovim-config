@@ -45,6 +45,7 @@ return {
 		dependencies = {
 			"mason-org/mason.nvim",
 			"neovim/nvim-lspconfig",
+			"saghen/blink.cmp",
 			"b0o/SchemaStore.nvim",
 		},
 
@@ -55,6 +56,7 @@ return {
 
 		config = function(_, opts)
 			vim.lsp.config("*", {
+				capabilities = require("blink.cmp").get_lsp_capabilities(),
 				on_init = on_init,
 				on_attach = on_attach,
 			})
