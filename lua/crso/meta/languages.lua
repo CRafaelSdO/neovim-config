@@ -28,6 +28,10 @@ M._languages_meta = {
 		linter = "yamllint",
 		formatter = "yamlfmt",
 	},
+    toml = {
+        lsp = "taplo",
+    },
+
 }
 
 M._lsps_opts = {
