@@ -71,3 +71,7 @@ vim.diagnostic.config({
 		},
 	},
 })
+
+require("crso.utils.status-column")
+
+opt.statuscolumn = "%!v:lua.status_column(v:lnum, win_getid())"
