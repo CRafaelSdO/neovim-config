@@ -24,6 +24,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         { import = "crso.plugins" },
+        { import = "crso.plugins.editor" },
     },
 
     defaults = { lazy = true },
