@@ -24,6 +24,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         { import = "crso.plugins" },
+        { import = "crso.plugins.ui" },
         { import = "crso.plugins.editor" },
         { import = "crso.plugins.coding" },
     },
@@ -31,7 +32,7 @@ require("lazy").setup({
     defaults = { lazy = true },
 
     install = {
-        colorscheme = { "habamax" },
+        colorscheme = { "catppuccin-mocha", "habamax" },
     },
 
     checker = {
