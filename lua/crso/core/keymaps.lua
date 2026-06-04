@@ -60,16 +60,16 @@ set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", "Buffers: Previous buffer")
 -------------------------------------------------------------------------------
 -- NAVEGAÇÃO NO MODO DE INSEÇÃO
 -------------------------------------------------------------------------------
-vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Mover para a esquerda" })
-vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Mover para baixo" })
-vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Mover para cima" })
-vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Mover para a direita" })
+set("i", "<C-h>", "<Left>", "Mover para a esquerda")
+set("i", "<C-j>", "<Down>", "Mover para baixo")
+set("i", "<C-k>", "<Up>", "Mover para cima")
+set("i", "<C-l>", "<Right>", "Mover para a direita")
 
-vim.keymap.set("i", "<C-b>", "<C-o>b", { desc = "Voltar uma palavra" })
-vim.keymap.set("i", "<C-f>", "<C-o>w", { desc = "Avançar uma palavra" })
+set("i", "<C-b>", "<C-o>b", "Voltar uma palavra")
+set("i", "<C-f>", "<C-o>w", "Avançar uma palavra")
 
-vim.keymap.set("i", "<C-a>", "<Home>", { desc = "Ir para o início da linha" })
-vim.keymap.set("i", "<C-d>", "<End>", { desc = "Ir para o final da linha" })
+set("i", "<C-a>", "<Home>", "Ir para o início da linha")
+set("i", "<C-d>", "<End>", "Ir para o final da linha")
 
 -------------------------------------------------------------------------------
 -- SISTEMA
