@@ -77,6 +77,14 @@ set("t", "<esc>", [[<C-\><C-n>]], "Sair do modo terminal")
 
 set("n", "<leader>q", "<cmd>q<cr>", "System: Quit Neovim")
 
+set("n", "<leader>e", function()
+	local mini_files = require("mini.files")
+
+	if not mini_files.close() then
+		mini_files.open(vim.api.nvim_buf_get_name(0))
+	end
+end, "Toggle mini.files (Diretório atual)")
+
 -------------------------------------------------------------------------------
 -- COMMENTS
 -------------------------------------------------------------------------------
