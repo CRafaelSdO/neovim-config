@@ -50,7 +50,7 @@ return {
         },
 
         opts = {
-            ensure_installed = require("crso.meta.languages"):lsps(),
+            ensure_installed = require("crso.meta.stack"):lsps(),
             automatic_enable = true,
         },
 
@@ -61,7 +61,7 @@ return {
                 on_attach = on_attach,
             })
 
-            for lsp, lsp_opts in pairs(require("crso.meta.languages"):lsps_opts()) do
+            for lsp, lsp_opts in pairs(require("crso.meta.stack"):lsps_opts()) do
                 if type(lsp_opts) == "function" then
                     lsp_opts = lsp_opts()
                 end
