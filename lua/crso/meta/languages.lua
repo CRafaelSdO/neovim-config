@@ -62,19 +62,18 @@ M._lsps_opts = {
         },
     },
 
-    yamlls = {
-        settings = {
-            yaml = {
-                validate = true,
-                format = { enabled = false },
-                customTags = { "!reference sequence" },
-
-                schemas = function()
-                    return require("schemastore").yaml.schemas()
-                end,
+    yamlls = function()
+        return {
+            settings = {
+                yaml = {
+                    validate = true,
+                    format = { enabled = false },
+                    customTags = { "!reference sequence" },
+                    schemas = require("schemastore").yaml.schemas(),
+                },
             },
-        },
-    },
+        }
+    end,
 }
 
 function M:languages()
