@@ -1,36 +1,49 @@
 local M = {}
 
-M._languages_meta = {
-    vim = {},
-    vimdoc = {},
-    query = {},
+---@class StackMeta
+---@field parsers string[] Tree-sitter parsers list
+---@field lsps? string[] LSP list (opcional)
+---@field linters? string[] Linting tools list (opcional)
+---@field formatters? string[] Formatters list (opcional)
 
-    markdown = {
-        lsp = "marksman",
-        linter = "markdownlint",
-        formatter = "prettier",
+---@type table<string, StackMeta>
+M._stack_meta = {
+    vim = {
+        parsers = { "vim" },
     },
 
-    markdown_inline = {
-        lsp = "marksman",
-        linter = "markdownlint",
-        formatter = "prettier",
+    help = {
+        parsers = { "vimdoc" },
+    },
+
+    query = {
+        parsers = { "query" },
+    },
+
+    markdown = {
+        parsers = { "markdown", "markdown_inline" },
+        lsps = { "marksman" },
+        linters = { "markdownlint" },
+        formatters = { "prettier" },
     },
 
     lua = {
-        lsp = "lua_ls",
-        linter = "luacheck",
-        formatter = "stylua",
+        parsers = { "lua" },
+        lsps = { "lua_ls" },
+        linters = { "luacheck" },
+        formatters = { "stylua" },
     },
 
     toml = {
-        lsp = "taplo",
+        parsers = { "toml" },
+        lsps = { "taplo" },
     },
 
     yaml = {
-        lsp = "yamlls",
-        linter = "yamllint",
-        formatter = "yamlfmt",
+        parsers = { "yaml" },
+        lsps = { "yamlls" },
+        linters = { "yamllint" },
+        formatters = { "yamlfmt" },
     },
 }
 
@@ -76,16 +89,35 @@ M._lsps_opts = {
     end,
 }
 
-function M:languages()
-    return vim.tbl_keys(self._languages_meta)
+-- Extends a list-like table with the values of another list-like table that aren't on it yet.
+--
+-- NOTE: This mutates dst!
+-- @param dst string[] List which will be modified and appended to
+-- @param src string[] List from which values will be inserted
+local function list_extend(dst, src)
+    for _, value in ipairs(src) do
+        if not vim.tbl_contains(dst, value) then
+            table.insert(dst, value)
+        end
+    end
+end
+
+function M:parsers()
+    local parsers = {}
+
+    for _, meta in pairs(self._stack_meta) do
+        list_extend(parsers, meta.parsers)
+    end
+
+    return parsers
 end
 
 function M:lsps()
     local lsps = {}
 
-    for _, meta in pairs(self._languages_meta) do
-        if meta.lsp then
-            table.insert(lsps, meta.lsp)
+    for _, meta in pairs(self._stack_meta) do
+        if meta.lsps then
+            list_extend(lsps, meta.lsps)
         end
     end
 
@@ -95,33 +127,41 @@ end
 function M:lsps_opts()
     local lsps_opts = {}
 
-    for _, meta in pairs(self._languages_meta) do
-        if meta.lsp then
-            lsps_opts[meta.lsp] = self._lsps_opts[meta.lsp] and self._lsps_opts[meta.lsp] or {}
+    for _, meta in pairs(self._stack_meta) do
+        if meta.lsps then
+            for _, lsp in ipairs(meta.lsps) do
+                if not lsps_opts[lsp] then
+                    lsps_opts[lsp] = self._lsps_opts[lsp] or {}
+                end
+            end
         end
     end
 
     return lsps_opts
 end
 
-function M:linter_by_ft()
-    local linter_by_ft = {}
+function M:linters_by_ft()
+    local linters_by_ft = {}
 
-    for language, meta in pairs(self._languages_meta) do
-        linter_by_ft[meta.ft or language] = type(meta.linter) == "table" and meta.linter or { meta.linter }
+    for ft, meta in pairs(self._stack_meta) do
+        if meta.linters then
+            linters_by_ft[ft] = meta.linters
+        end
     end
 
-    return linter_by_ft
+    return linters_by_ft
 end
 
-function M:formatter_by_ft()
-    local formatter_by_ft = {}
+function M:formatters_by_ft()
+    local formatters_by_ft = {}
 
-    for language, meta in pairs(self._languages_meta) do
-        formatter_by_ft[meta.ft or language] = type(meta.fomatter) == "table" and meta.fomatter or { meta.formatter }
+    for ft, meta in pairs(self._stack_meta) do
+        if meta.formatters then
+            formatters_by_ft[ft] = meta.formatters
+        end
     end
 
-    return formatter_by_ft
+    return formatters_by_ft
 end
 
 return M

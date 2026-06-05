@@ -7,7 +7,7 @@ return {
         build = ":TSUpdate",
 
         opts = {
-            ensure_installed = require("crso.meta.stack"):languages(),
+            ensure_installed = require("crso.meta.stack"):parsers(),
             sync_install = false,
             auto_install = true,
         },

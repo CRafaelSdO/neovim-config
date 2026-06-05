@@ -5,7 +5,7 @@ return {
         dependencies = { "mason-org/mason.nvim" },
 
         config = function()
-            require("lint").linters_by_ft = require("crso.meta.stack"):linter_by_ft()
+            require("lint").linters_by_ft = require("crso.meta.stack"):linters_by_ft()
         end,
     },
 
