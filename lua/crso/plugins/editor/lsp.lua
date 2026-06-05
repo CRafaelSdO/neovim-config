@@ -62,6 +62,10 @@ return {
             })
 
             for lsp, lsp_opts in pairs(require("crso.meta.languages"):lsps_opts()) do
+                if type(lsp_opts) == "function" then
+                    lsp_opts = lsp_opts()
+                end
+
                 vim.lsp.config(lsp, lsp_opts)
             end
 
