@@ -80,7 +80,7 @@ M._lsps_opts = {
             settings = {
                 yaml = {
                     validate = true,
-                    format = { enabled = false },
+                    format = { enable = false },
                     customTags = { "!reference sequence" },
                     schemas = require("schemastore").yaml.schemas(),
                 },
