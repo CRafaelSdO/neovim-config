@@ -135,6 +135,10 @@ set("n", "<leader>fk", function()
     require("telescope.builtin").keymaps()
 end, "Telescope: Active Keymaps")
 
+set("n", "<leader>fd", function()
+    require("telescope.builtin").diagnostics({ bufnr = 0 })
+end, "Telescope: Code diagnostics")
+
 set("n", "<leader>ft", function()
     require("telescope-tabs").list_tabs()
 end, "Telescope: List active tabs")
