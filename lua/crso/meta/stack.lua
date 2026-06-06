@@ -34,6 +34,13 @@ M._stack_meta = {
         formatters = { "stylua" },
     },
 
+    sh = {
+        parsers = { "bash" },
+        lsps = { "bashls" },
+        linters = { "shellcheck" },
+        formatters = { "shfmt" },
+    },
+
     toml = {
         parsers = { "toml" },
         lsps = { "taplo" },
@@ -61,6 +68,10 @@ M._lsps_opts = {
                 telemetry = { enable = false },
             },
         },
+    },
+
+    bashls = {
+        filetypes = { "sh", "bash", "zsh" },
     },
 
     taplo = {
