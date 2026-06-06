@@ -82,6 +82,7 @@ set("i", "<C-s>", "<Esc><cmd>wa<cr>a", "System: Save all files and continue typi
 
 set("n", "<esc>", "<cmd>noh<cr>", "System: Clear search highlight")
 
+set("n", "<leader>q", "<cmd>q<cr>", "System: Quit Neovim")
 set("t", "<esc>", function()
     local buf_name = vim.api.nvim_buf_get_name(0)
 
@@ -91,8 +92,6 @@ set("t", "<esc>", function()
 
     return [[<C-\><C-n>]]
 end, "Sair do modo terminal", { expr = true })
-
-set("n", "<leader>q", "<cmd>q<cr>", "System: Quit Neovim")
 
 set("n", "<leader>e", function()
     local mini_files = require("mini.files")
