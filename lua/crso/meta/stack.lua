@@ -34,6 +34,12 @@ M._stack_meta = {
         formatters = { "stylua" },
     },
 
+    python = {
+        parsers = { "python" },
+        lsps = { "basedpyright", "ruff" },
+        formatters = { "ruff_format", "ruff_organize_imports" },
+    },
+
     sh = {
         parsers = { "bash" },
         lsps = { "bashls" },
@@ -66,6 +72,16 @@ M._lsps_opts = {
                 },
 
                 telemetry = { enable = false },
+            },
+        },
+    },
+
+    basedpyright = {
+        settings = {
+            basedpyright = {
+                analysis = {
+                    typeCheckingMode = "standard",
+                },
             },
         },
     },
