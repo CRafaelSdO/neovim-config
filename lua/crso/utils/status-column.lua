@@ -26,14 +26,11 @@ local git_pe = PriorityEvaluator(
 )
 local diagnostic_pe = PriorityEvaluator("DiagnosticSign", { "Hint", "Info", "Warn", "Error" })
 
-_G.status_column = function(line_number, window_id)
-    local extmarks = get_extmarks(
-        get_buf(window_id),
-        -1,
-        { line_number - 1, 0 },
-        { line_number - 1, -1 },
-        { details = true }
-    )
+_G.status_column = function()
+    local line_number = vim.v.lnum
+    local buffer = get_buf(vim.g.statusline_winid)
+
+    local extmarks = get_extmarks(buffer, -1, { line_number - 1, 0 }, { line_number - 1, -1 }, { details = true })
 
     local git_s = Sign()
     local diagnostic_s = Sign()
