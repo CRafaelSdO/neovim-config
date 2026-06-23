@@ -54,8 +54,8 @@ set("n", "<leader>bW", function()
     require("bufdelete").bufdelete(0, true)
 end, "Buffers: Wipeout current buffer (forced)")
 
-set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", "Buffers: Next buffer")
 set("n", "<S-h>", "<cmd>BufferLineCyclePrev<cr>", "Buffers: Previous buffer")
+set("n", "<S-l>", "<cmd>BufferLineCycleNext<cr>", "Buffers: Next buffer")
 
 -------------------------------------------------------------------------------
 -- NAVEGAÇÃO NO MODO DE INSEÇÃO
