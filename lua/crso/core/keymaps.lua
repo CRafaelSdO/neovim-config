@@ -75,10 +75,10 @@ set("i", "<C-d>", "<End>", "Ir para o final da linha")
 -- SISTEMA
 -------------------------------------------------------------------------------
 set("n", "<C-s>", "<cmd>w<cr>", "System: Save file")
-set("n", "<C-S>", "<cmd>wa<cr>", "System: Save all files")
+set("n", "<M-s>", "<cmd>wa<cr>", "System: Save all files")
 
 set("i", "<C-s>", "<Esc><cmd>w<cr>a", "System: Save file and continue typing")
-set("i", "<C-s>", "<Esc><cmd>wa<cr>a", "System: Save all files and continue typing")
+set("i", "<M-s>", "<Esc><cmd>wa<cr>a", "System: Save all files and continue typing")
 
 set("n", "<esc>", "<cmd>noh<cr>", "System: Clear search highlight")
 
