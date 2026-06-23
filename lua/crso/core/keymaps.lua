@@ -18,8 +18,8 @@ end
 set("n", "<leader>tn", "<cmd>tabnew<cr>", "Tabs: Open a new tab")
 set("n", "<leader>tc", "<cmd>tabclose<cr>", "Tabs: Close current tab")
 
-set("n", "<leader>tl", "<cmd>tabnext<cr>", "Tabs: Go to next tab")
-set("n", "<leader>th", "<cmd>tabprevious<cr>", "Tabs: Go to previous tab")
+set("n", "<M-h>", "<cmd>tabprevious<cr>", "Tabs: Go to previous tab")
+set("n", "<M-l>", "<cmd>tabnext<cr>", "Tabs: Go to next tab")
 
 -------------------------------------------------------------------------------
 -- WINDOWS
