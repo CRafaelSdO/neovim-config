@@ -19,6 +19,7 @@ return {
                 selection_caret = " ",
                 entry_prefix = " ",
                 sorting_strategy = "ascending",
+                wrap_results = true,
 
                 layout_config = {
                     horizontal = {
