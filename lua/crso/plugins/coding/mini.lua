@@ -3,7 +3,7 @@ return {
         "echasnovski/mini.surround",
 
         version = "*",
-        event = { "BufReadPre", "BufNewFile" },
+        event = "BufEnter",
         opts = {
             mappings = {
                 add = "<leader>sa",
@@ -20,7 +20,7 @@ return {
         "echasnovski/mini.ai",
 
         version = "*",
-        event = { "BufReadPre", "BufNewFile" },
+        event = "BufEnter",
         config = true,
     },
 
